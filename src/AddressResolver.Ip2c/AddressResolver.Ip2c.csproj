@@ -8,4 +8,8 @@
     <ProjectReference Include="..\AddressResolver.Abstractions\AddressResolver.Abstractions.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd $(ProjectDir)&#xD;&#xA;del *.nupkg&#xD;&#xA;nuget pack -IncludeReferencedProjects" />
+  </Target>
+
 </Project>
