@@ -12,8 +12,15 @@ IAddressResolver addressResolver = new Ip2cClient {
 };
 
 // Gets the IPAddress and RegionInfo objects
-var targetAddress = IPAddress.Parse("<put-your-ip-address-here>");
+var targetAddress = IPAddress.Parse("8.8.8.8");
 var result = await addressResolver.ResolveAddressAsync(targetAddress);
+/*
+    result:
+        - Address: 8.8.8.8 (type: IPAddress)
+        - IsReverseAddress: false (type: bool)
+        - RegionInfo: US (type: RegionInfo, see https://docs.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo) 
+        - StatusCode: StatusCode.Success (type: StatusCode)
+*/
 ```
 
 ## License
