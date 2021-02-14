@@ -7,7 +7,7 @@ using Moq;
 
 namespace AddressResolver.UnitTest
 {
-    public class Tests
+    public class FunctionTests
     {
         private IAddressResolver _addressResolver;
 

@@ -7,30 +7,26 @@
     using System.Net.Sockets;
     using System.Threading.Tasks;
 
-    public abstract class AddressResolver : IAddressResolver, IDisposable
+    public abstract class AddressResolver : IAddressResolver
     {
         private readonly HttpClient _httpClient;
 
         public IAddressStore AddressStore { get; set; }
-
-        public abstract Uri EndPoint { get; }
+         
         public virtual bool SupportedAddressStore => this.AddressStore != null;
-        public virtual bool SupportedV4 { get; } = false;
+        public virtual bool SupportedV4 { get; } = true;
         public virtual bool SupportedV6 { get; } = false;
 
-        protected AddressResolver() : this(null)
-        {
+        public AddressResolver() : this(Shared.HttpClientFactory)
+        { 
         }
 
-        protected AddressResolver(HttpMessageHandler handler)
+        protected AddressResolver(IHttpClientFactory httpClientFactory)
         {
-            this._httpClient = new HttpClient(handler ?? new HttpClientHandler()) { BaseAddress = EndPoint };
+            this._httpClient = httpClientFactory.GetHttpClient();// { BaseAddress = EndPoint };
         }
 
-        public void Dispose()
-        {
-            this._httpClient.Dispose();
-        }
+        protected abstract Uri BuildEndPointUri(IPAddress address);
 
         public virtual Task<AddressResolvedResult> ResolveAddressAsync(string ipString)
         {
@@ -52,6 +48,11 @@
             return this.ResolveAddressCore(ipAddress);
         }
 
+        protected virtual Task<string> DownloadDataAsync(HttpClient client, Uri uri)
+        {
+            return client.GetStringAsync(uri);
+        }
+
         protected abstract Task<AddressResolvedResult> ConvertResponseDataAsync(string responseData, IPAddress ipAddress);
 
         private async Task<AddressResolvedResult> ResolveAddressCore(IPAddress ipAddress)
@@ -68,15 +69,15 @@
                 default:
                     throw new NotSupportedException("Not supported protocol.");
             }
-
-            var ipString = ipAddress.ToString();
+             
             if (this.SupportedAddressStore && this.AddressStore.TryGet(ipAddress, out var result))
             {
                 return result;
             }
             else
-            {
-                var responseContent = await this._httpClient.GetStringAsync("/" + ipString).ConfigureAwait(false); //
+            { 
+                var uri = this.BuildEndPointUri(ipAddress);
+                var responseContent = await this.DownloadDataAsync(this._httpClient, uri);
                 result = await ConvertResponseDataAsync(responseContent, ipAddress);
 
                 if (this.SupportedAddressStore)

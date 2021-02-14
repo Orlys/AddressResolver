@@ -8,10 +8,13 @@ using AddressResolver;
 
 // Declares addressResolver object and materialization.
 IAddressResolver addressResolver = new Ip2cClient {
-    AddressStore = InMemoryAddressStore.Default // options, using default address cache.
+    AddressStore = Shared.AddressStore // options, using default address cache.
 };
 
 // Gets the IPAddress and RegionInfo objects
 var targetAddress = IPAddress.Parse("<put-your-ip-address-here>");
 var result = await addressResolver.ResolveAddressAsync(targetAddress);
 ```
+
+## License
+**Apache 2.0**
