@@ -15,6 +15,7 @@ build:
 build_script:
   - dotnet build
   - dotnet test
+  - dotnet pack
 
 deploy:
   - provider: NuGet
