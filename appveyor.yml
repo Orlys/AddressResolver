@@ -28,5 +28,5 @@ nuget:
     project_feed: true
 
 artifacts:
-    - path: '..\**\*.nupkg'
-    - path: '..\**\*.snupkg'
+    - path: 'src\**\*.nupkg'
+    - path: 'src\**\*.snupkg'
