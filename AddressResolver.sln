@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{5CE8436A-C
 		appveyor.yml = appveyor.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressResolver.Ip2Location", "AddressResolver.Ip2Location\AddressResolver.Ip2Location.csproj", "{93B7BCED-F24B-414B-8B63-B4C0C48263C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{37EDF5F0-959E-4401-9775-D2D3723476A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37EDF5F0-959E-4401-9775-D2D3723476A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37EDF5F0-959E-4401-9775-D2D3723476A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B7BCED-F24B-414B-8B63-B4C0C48263C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B7BCED-F24B-414B-8B63-B4C0C48263C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B7BCED-F24B-414B-8B63-B4C0C48263C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B7BCED-F24B-414B-8B63-B4C0C48263C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{9476DACA-3553-472B-B266-473292471B85} = {95F77648-9E19-4A32-B3E6-9F7D822261B2}
 		{E8B90F9B-B2A8-4232-B47D-E8783ED63661} = {F8ED54F0-3D36-48CB-84F1-24C2EEF33698}
 		{37EDF5F0-959E-4401-9775-D2D3723476A7} = {95F77648-9E19-4A32-B3E6-9F7D822261B2}
+		{93B7BCED-F24B-414B-8B63-B4C0C48263C5} = {F8ED54F0-3D36-48CB-84F1-24C2EEF33698}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93C44244-8927-4FCD-B122-76E6FF07EF98}

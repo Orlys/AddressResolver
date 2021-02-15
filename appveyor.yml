@@ -2,6 +2,15 @@ image: Visual Studio 2019
 version: 1.0.{build}
 configuration: Release
 platform: Any CPU
+dotnet_csproj:
+  patch: true
+  file: 'src\**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
 before_build:
   - cmd: nuget restore
 
@@ -11,6 +20,13 @@ build:
     publish_nuget_symbols: true
     include_nuget_references: true
     verbosity: detailed
+    
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
 
 build_script:
   - dotnet build
