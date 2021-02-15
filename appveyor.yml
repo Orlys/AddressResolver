@@ -1,0 +1,32 @@
+image: Visual Studio 2019
+version: {build}
+configuration: Release
+platform: Any CPU
+before_build:
+  - cmd: nuget restore
+
+build:
+    project: AddressResolver.sln
+    publish_nuget: true
+    publish_nuget_symbols: true
+    include_nuget_references: true
+    verbosity: detailed
+
+build_script:
+  - dotnet build
+  - dotnet test
+
+deploy:
+  - provider: NuGet
+    api_key:
+        secure: L/4PEnjSmcOp5W7UKLV9F9JnHW8+XT4ofpTddiBAefX7KTv+JeGtkQCZ+7ieKzZg
+    on:
+        branch: master
+    artifact: /.*(\.|\.s)nupkg/
+
+nuget:
+    project_feed: true
+
+artifacts:
+    - path: '**\*.nupkg'
+    - path: '**\*.snupkg'
