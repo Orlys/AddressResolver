@@ -22,8 +22,7 @@ deploy:
     api_key:
         secure: L/4PEnjSmcOp5W7UKLV9F9JnHW8+XT4ofpTddiBAefX7KTv+JeGtkQCZ+7ieKzZg
     on:
-        branch: master
-    artifact: /.*(\.|\.s)nupkg/
+        branch: master 
 
 nuget:
     project_feed: true
