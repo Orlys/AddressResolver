@@ -1,7 +1,7 @@
 image: Visual Studio 2019
-version: 1.0.{build}
 configuration: Release
 platform: Any CPU
+
 dotnet_csproj:
   patch: true
   file: 'src\**\*.csproj'
