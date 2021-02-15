@@ -9,7 +9,7 @@
     <Version>1.0.1</Version>
     <PackageProjectUrl>https://github.com/Orlys/AddressResolver</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Orlys/AddressResolver</RepositoryUrl>
-    <PackageTags>ip2c</PackageTags>
+    <PackageTags>AddressResolver,ip2c</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

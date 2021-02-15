@@ -9,7 +9,7 @@
     <Copyright>Copyright 2021 © Orlys Ma</Copyright>
     <Authors>Orlys</Authors>
     <RepositoryUrl>https://github.com/Orlys/AddressResolver</RepositoryUrl>
-    <PackageTags>ip2location</PackageTags>
+    <PackageTags>AddressResolver,ip2location</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

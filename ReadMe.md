@@ -28,6 +28,7 @@ var result = await addressResolver.ResolveAddressAsync(targetAddress);
 |---|---|
 | AddressResolver.Ip2c | [ip2c.org](https://about.ip2c.org/)
 | AddressResolver.Ip2Country | [ip2country.info](https://ip2country.info/)
+| AddressResolver.Ip2Location | [ip2location.com](https://ip2location.com/)
 
 ## License
 **Apache 2.0**

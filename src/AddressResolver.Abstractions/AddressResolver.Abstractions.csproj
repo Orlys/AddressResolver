@@ -10,7 +10,8 @@
     <Description>AddressResolver is a simply, easy to use common IP and Region resolver written in C#.</Description>
     <PackageProjectUrl>https://github.com/Orlys/AddressResolver</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Orlys/AddressResolver</RepositoryUrl>
-    <PackageTags></PackageTags>
+    <PackageTags>AddressResolver</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
