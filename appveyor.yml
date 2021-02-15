@@ -29,4 +29,3 @@ nuget:
 
 artifacts:
     - path: 'src\**\*.nupkg'
-    - path: 'src\**\*.snupkg'
