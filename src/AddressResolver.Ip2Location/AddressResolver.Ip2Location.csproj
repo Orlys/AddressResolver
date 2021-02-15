@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Copyright>Copyright 2021 © Orlys Ma</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Description>AddressResolver is a simply, easy to use common IP and Region resolver written in C#.</Description>
-    <Authors>Orlys</Authors>
     <Version>1.0.1</Version>
+    <Description>AddressResolver is a simply, easy to use common IP and Region resolver written in C#.</Description>
     <PackageProjectUrl>https://github.com/Orlys/AddressResolver</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>Copyright 2021 © Orlys Ma</Copyright>
+    <Authors>Orlys</Authors>
     <RepositoryUrl>https://github.com/Orlys/AddressResolver</RepositoryUrl>
-    <PackageTags>ip2c</PackageTags>
+    <PackageTags>ip2location</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
